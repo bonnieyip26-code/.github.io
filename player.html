@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Player</title>
+    <style>body{text-align:center; font-family:Arial;} audio{width:80%; margin:20px;}</style>
+</head>
+<body>
+    <h1>Audio Player</h1>
+    <audio id="player" controls autoplay></audio>
+    <script>
+        const audioFile = new URLSearchParams(window.location.search).get('audio');
+        if(audioFile) document.getElementById("player").src = audioFile;
+        else document.write("<p>Error: Audio file not specified</p>");
+    </script>
+</body>
+</html>
